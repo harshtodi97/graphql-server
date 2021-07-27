@@ -1,0 +1,58 @@
+{
+   "name": "graphql-ts-server-boilerplate-2",
+   "version": "0.0.1",
+   "description": "Awesome project developed with TypeORM.",
+   "devDependencies": {
+      "@gql2ts/types": "^1.9.0",
+      "@types/babel__core": "^7.1.15",
+      "@types/bcryptjs": "^2.4.2",
+      "@types/ioredis": "^4.26.6",
+      "@types/jest": "^26.0.24",
+      "@types/node": "^16.4.1",
+      "@types/node-fetch": "^2.5.12",
+      "@types/uuid": "^8.3.1",
+      "@types/yup": "^0.29.13",
+      "gql2ts": "^1.10.1",
+      "jest": "^27.0.6",
+      "nodemon": "^2.0.12",
+      "ts-jest": "^27.0.4",
+      "ts-node": "10.1.0",
+      "tslint-config-prettier": "^1.18.0",
+      "typescript": "4.3.5"
+   },
+   "dependencies": {
+      "bcryptjs": "^2.4.3",
+      "graphql": "14.7.0",
+      "graphql-import": "^1.0.2",
+      "graphql-request": "1.5.1",
+      "graphql-tools": "^7.0.5",
+      "graphql-yoga": "^1.18.3",
+      "ioredis": "^4.27.6",
+      "node-fetch": "^2.6.1",
+      "pg": "^8.6.0",
+      "reflect-metadata": "^0.1.13",
+      "typeorm": "0.2.34",
+      "uuid": "^8.3.2",
+      "yup": "^0.32.9"
+   },
+   "scripts": {
+      "start": "SET NODE_ENV=development& nodemon --exec ts-node --files src/index.ts",
+      "test": "SET NODE_ENV=test& jest --watch",
+      "gen-schema-types": "gql2ts src/schema.graphql -o src/types/schema.d.ts"
+   },
+   "jest": {
+      "globalSetup": "./src/testSetup/callSetup.js",
+      "transform": {
+         "^.+\\.tsx?$": "ts-jest"
+      },
+      "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+      "moduleFileExtensions": [
+         "ts",
+         "tsx",
+         "js",
+         "jsx",
+         "json",
+         "node"
+      ]
+   }
+}
